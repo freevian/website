@@ -10,7 +10,7 @@ echo ">>> 开始部署 $APP_NAME..."
 
 # 1. 拉取最新代码
 echo ">>> 正在拉取远程最新代码..."
-git pull origin main
+git pull
 
 # 2. 构建 Docker 镜像
 echo ">>> 正在构建 Docker 镜像..."
