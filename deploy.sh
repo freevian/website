@@ -29,7 +29,7 @@ echo ">>> 正在运行新容器..."
 docker run -d \
   --name $APP_NAME \
   --restart always \
-  -p $HOST_PORT:$CONTAINER_PORT \
+  --network host \
   $APP_NAME
 
 # 5. 清理虚悬镜像
