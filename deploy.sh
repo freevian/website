@@ -4,7 +4,7 @@ set -e # 遇到错误立即退出
 # 设置变量
 APP_NAME="freevian-website"
 CONTAINER_PORT=80
-HOST_PORT=80
+HOST_PORT=8081
 
 echo ">>> 开始部署 $APP_NAME..."
 
@@ -29,7 +29,7 @@ echo ">>> 正在运行新容器..."
 docker run -d \
   --name $APP_NAME \
   --restart always \
-  --network host \
+  -p $HOST_PORT:$CONTAINER_PORT \
   $APP_NAME
 
 # 5. 清理虚悬镜像
