@@ -7,11 +7,14 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies 
-# (postinstall will run paraglide-js compile)
-RUN npm install
+# Skip postinstall because project.inlang isn't here yet
+RUN npm install --ignore-scripts
 
 # Copy source code
 COPY . .
+
+# Run paraglide compile manually after files are here
+RUN npx paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide
 
 # Build the project
 RUN npm run build
