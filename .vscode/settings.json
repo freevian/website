@@ -2,10 +2,14 @@
 	"files.associations": {
 		"*.css": "tailwindcss"
 	},
-	// "files.exclude": {
-	// 	"**/.svelte-kit": true,
-	// 	"**/node_modules": true,
-	// 	"**/build": true,
-	// 	"**/.vscode": true
-	// }
+	"files.exclude": {
+		// "**/.svelte-kit": true,
+		// "**/node_modules": true,
+		// "**/build": true,
+		// "**/.vscode": true
+		"**/.prettierrc": true,
+		"**/.prettierignore": true,
+		"**/.gitignore": true,
+		"**/node_modules": true
+	}
 }
