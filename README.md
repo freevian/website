@@ -11,11 +11,15 @@
 ssh -R 7890:127.0.0.1:7890 alicloud "export https_proxy=http://127.0.0.1:7890 && export http_proxy=http://127.0.0.1:7890 && cd /root/freevian-website && bash deploy.sh"
 ```
 
+> [!NOTE]
+> 当前已切换至 443 端口部署。如果需要支持真正的 HTTPS，请确保在服务器上配置了 SSL 证书并映射到容器内，或在宿主机使用 Nginx 等进行反向代理。
+
+
 ### 部署脚本说明 (`deploy.sh`)
 
 1. **拉取代码**：从 `origin main` 获取最新代码。
 2. **构建镜像**：构建名为 `freevian-website` 的 Docker 镜像。
-3. **运行容器**：停止旧容器并启动新容器，映射端口 433。
+3. **运行容器**：停止旧容器并启动新容器，映射宿主机端口 443。
 4. **清理**：删除虚悬 (dangling) 镜像。
 
 ## 开发
