@@ -4,7 +4,7 @@ set -e # 遇到错误立即退出
 # 设置变量
 APP_NAME="freevian-website"
 CONTAINER_PORT=80
-HOST_PORT=80
+HOST_PORT=433
 
 echo ">>> 开始部署 $APP_NAME..."
 
