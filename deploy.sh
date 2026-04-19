@@ -1,14 +1,16 @@
 #!/bin/bash
 set -e # 遇到错误立即退出
 
-# 1. 拉取最新代码
-echo ">>> 正在拉取远程最新代码..."
-git pull origin main
-
-# 2. 设置/加载最新变量
+# 设置变量
 APP_NAME="freevian-website"
 CONTAINER_PORT=80
 HOST_PORT=433
+
+echo ">>> 开始部署 $APP_NAME..."
+
+# 1. 拉取最新代码
+echo ">>> 正在拉取远程最新代码..."
+git pull origin main
 
 # 2. 构建 Docker 镜像
 echo ">>> 正在构建 Docker 镜像..."
